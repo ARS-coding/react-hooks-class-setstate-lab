@@ -14,7 +14,7 @@ class ShoppingList extends React.Component {
     }); 
   }
 
-  handleCategoryChange(event) {
+  handleCategoryChange = event => {
     // event.target.value will be the value selected by the user
     this.setState({selectedCategory: event.target.value});
   }

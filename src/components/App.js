@@ -9,7 +9,7 @@ class App extends React.Component {
     isDarkMode: false
   }
 
-  handleDarkModeClick() {
+  handleDarkModeClick = () => {
     this.setState({isDarkMode: !this.state.isDarkMode});
   }
   render() {
