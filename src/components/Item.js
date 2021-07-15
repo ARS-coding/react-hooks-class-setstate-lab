@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 class Item extends React.Component {
   constructor(props) {
@@ -10,6 +10,9 @@ class Item extends React.Component {
   
   handleAddToCartClick = () => {
     this.setState({isInCart: !this.state.isInCart});
+    // console.log(Item.name)
+    console.log(this.displayName)
+    console.log(this.defaultProps)
   }
   
   render() {
