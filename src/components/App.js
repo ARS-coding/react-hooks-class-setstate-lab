@@ -3,15 +3,18 @@ import ShoppingList from "./ShoppingList";
 import itemData from "../data/items";
 
 class App extends React.Component {
-
-  state = {
-    items: itemData,
-    isDarkMode: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: itemData,
+      isDarkMode: false
+    }
   }
 
   handleDarkModeClick = () => {
     this.setState({isDarkMode: !this.state.isDarkMode});
   }
+  
   render() {
     return (
       <div className={"App " + (this.state.isDarkMode ? "dark" : "light")}>

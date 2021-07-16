@@ -10,19 +10,19 @@ class ShoppingList extends Component {
     }
   }
   
-  handleCategoryChange = async (event) => {
+  handleCategoryChange = (event) => {
     // event.target.value will be the value selected by the user
-    await this.setState({ selectedCategory: event.target.value });
+     this.setState({ selectedCategory: event.target.value });
 
     // we want to filter the items to only display the ones based on the selected category
-    await this.setState({
+     this.setState({
       itemsToDisplay: this.props.items.filter((item) => {
-        if (this.state.selectedCategory === "All") return true;
+        if (event.target.value === "All") return true;
       
-        return item.category === this.state.selectedCategory;
+        return item.category === event.target.value;
       })
     }); 
-    console.log(this.state.itemsToDisplay)
+   
   }
 
   
@@ -37,7 +37,7 @@ class ShoppingList extends Component {
             <option value="Dessert">Dessert</option>
           </select>
         </div>
-        <ul className="Items">
+        <ul className="Items testingItems">
           {this.state.itemsToDisplay.map((item) => (
             <Item key={item.id} name={item.name} category={item.category} />
           ))}
